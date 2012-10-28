@@ -60,15 +60,9 @@ bool PID::Compute()
       if (resetOnDirChange)
       {
          if ((setPoint < 0) && (lastSetpoint >= 0))
-         {
             ITerm = 0;
-            Serial.println("INTEGRAL RESET");
-         }
          else if ((setPoint >= 0) && (lastSetpoint < 0))
-         {
             ITerm = 0;
-            Serial.println("INTEGRAL RESET");
-         }
       }
 
       double error = setPoint - input;
